@@ -28,7 +28,7 @@ public class Hooks extends TestBase{
 	{
 		if(!isReportRunning)
 		{
-			extentReports =ExtentReportManager.Instance();
+			extentReports =ExtentReportUtil.Instance();
 			 
 			isReportRunning =true;
 			

@@ -2,6 +2,7 @@ package StepDefinitions;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -14,37 +15,39 @@ import com.qa.utils.CucumberTestAutomationLogger;
 import com.qa.utils.ReportsFolderPath;
 import com.relevantcodes.extentreports.ExtentReports;
 
+import com.qa.Base.BaseUtil;
+
 /**
  * @author madhavi.dokiparthi
  *
  */
 @SuppressWarnings({"deprecation"})
-public class ExtentReportManager {
-	 static ExtentReports extent;
+public class ExtentReportUtil extends BaseUtil {
+	 static ExtentReports extents;
 	// String path = ReportsFolderPath.createScreenShotDir();
-	 private static ExtentReportManager extentReportManager =null;
+	 private static ExtentReportUtil extentReportManager =null;
 	// @SuppressWarnings("static-access")
-	 ExtentReportManager() {
+	 public ExtentReportUtil() {
 		 if(extentReportManager ==null)
 		 {
-			 extentReportManager = new ExtentReportManager();
+			 extentReportManager = new ExtentReportUtil();
 			 extentReportManager.Instance();
 		 }
 	 }
 	public static ExtentReports Instance()
 	   {
-		if(extent==null)
+		if(extents==null)
 		{
 			CucumberTestAutomationLogger.writeToLog("ExtentReportManager", "Instance()", " method called");
 			 String path = ReportsFolderPath.createScreenShotDir(); 
 		    // extent = new ExtentReports(path+"\\"+"AWCTestSuiteReport"+".html", false);
 			String  reportName="Cucumber TestSuite Results"+getTimeStamp();
-			 extent = new ExtentReports(path+"\\"+reportName+".html", false);
-		     extent.config().documentTitle("Automation Report").reportName("CucumberTestSuiteResults");
+			extents = new ExtentReports(path+"\\"+reportName+".html", false);
+			extents.config().documentTitle("Automation Report").reportName("CucumberTestSuiteResults");
 		}
 		
 
-	  return extent;
+	  return extents;
 	     }
 	 
 	 public static String CaptureScreen(WebDriver driver, String ImagesPath)
@@ -84,6 +87,14 @@ public class ExtentReportManager {
 	       String timeStamp = new String(dateformatYYYYMMDD.format(dateNow));
 	       return timeStamp;
 	   }
-	  
+	  public void ExtentReportScreenshot() throws IOException {
+
+	        File scr = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	        Files.copy(scr.toPath(), new File(reportLocation + "screenshot.png").toPath());
+	        scenarioDef.fail("details").addScreenCaptureFromPath(reportLocation + "screenshot.png");
+	    }
+	  public void FlushReport(){
+	        extent.flush();
+	    }
 	 
 }

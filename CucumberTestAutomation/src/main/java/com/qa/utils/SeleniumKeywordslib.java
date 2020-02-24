@@ -44,7 +44,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-import StepDefinitions.ExtentReportManager;
+import StepDefinitions.ExtentReportUtil;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
@@ -117,7 +117,7 @@ public String enterText(WebDriver webDriver,WebElement objName,String inputValue
 			}
 			finally{
 				extentTestReport.log(LogStatus.FAIL, "Unable to enter "+objName +" due to Invalid Xpath");
-		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+objName+": " +inputValue))); 
+		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+objName+": " +inputValue))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -195,7 +195,7 @@ public String enterTextPCS(WebDriver webDriver,String objName,String selector,St
 			}
 			finally{
 				extentTestReport.log(LogStatus.FAIL, "Unable to enter "+objName +" due to Invalid Xpath");
-		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+objName+": " +inputValue))); 
+		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+objName+": " +inputValue))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -318,7 +318,7 @@ public String closeBrowser(WebDriver webDriver,ExtentReports extentReports,Exten
 		finally
 		{
 			extentTestReport.log(LogStatus.FAIL, "Unable to close browser ");
-	        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+	        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 	    	// extentReports.endTest(extentTestReport);
 	    	// extentReports.flush();
 	         //extentReports.close(); 
@@ -371,7 +371,7 @@ public String click(WebDriver webDriver,WebElement objname,ExtentReports extentR
 		}
 		finally{
 			extentTestReport.log(LogStatus.FAIL, "Unable to click "+objname);
-	        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+objname))); 
+	        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+objname))); 
 	    	// extentReports.endTest(extentTestReport);
 	    	// extentReports.flush();
 	         //extentReports.close(); 
@@ -435,7 +435,7 @@ public String selectWindow(WebDriver webDriver,ExtentReports extentReports,Exten
 		 }
 		 finally{
 				extentTestReport.log(LogStatus.FAIL, "Unable to switch to window ");
-		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -517,7 +517,7 @@ public boolean windowActivate(WebDriver webDriver, String title,ExtentReports ex
 		 }
 		 finally{
 				extentTestReport.log(LogStatus.FAIL, "Unable to switch to window ");
-		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -609,7 +609,7 @@ public boolean windowActivate(WebDriver webDriver, String title,ExtentReports ex
         	}
         	finally {
         		 extentTestReport.addScreenCapture(propertyFileReader.getValue("REPORT_PATH")+"objName");
-            	 extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+"objName"))); 
+            	 extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+"objName"))); 
             	// extentReports.endTest(extentTestReport);
             	// extentReports.flush();
             	 //extentReports.close(); 
@@ -755,7 +755,7 @@ public String selectFromList(WebDriver webDriver, String objName,String selector
 			finally
 			{
 				 extentTestReport.log(LogStatus.FAIL, "Unable to select "+input +" option from " +objName +" dropdown");
-		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -919,7 +919,7 @@ public String selectFromList(WebDriver webDriver, String objName,String selector
 		finally
 		{
 			 extentTestReport.log(LogStatus.FAIL, "Unable to select "+input +" option from " +objName +" dropdown");
-	         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+	         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 	    	// extentReports.endTest(extentTestReport);
 	    	// extentReports.flush();
 	         //extentReports.close(); 
@@ -1033,7 +1033,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
         	finally
         	{
         		 extentTestReport.log(LogStatus.FAIL, "Unable to select "  +inputtxt +" from "+objName+ "Menu List");
-		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -1163,7 +1163,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
 			finally
 			{
 				 extentTestReport.log(LogStatus.FAIL, "Unable to retrive the text from web element ");
-		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -1221,7 +1221,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
  			finally
  			{
  				 extentTestReport.log(LogStatus.FAIL, "Unable to get text from " +objName);
-		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+"objName"))); 
+		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+"objName"))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -1259,7 +1259,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
 //			FileUtils.copyFile(source, new File(fname));
 			CucumberTestAutomationLogger.writeToLog("SeleniumKeywordslib", "captureScreenshot() ","After getting generic screenshot");
 			status = "true";
-			extentTestReport.log(LogStatus.PASS, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+name+"_"+ df.format(new Date()))));
+			extentTestReport.log(LogStatus.PASS, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+name+"_"+ df.format(new Date()))));
 			return status;
 
 		} catch (Exception ex) {
@@ -1274,7 +1274,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
 			finally
 			{
 				 extentTestReport.log(LogStatus.FAIL, "Unable to capture screenshot ");
-		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+name+"_"+ df.format(new Date())))); 
+		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+name+"_"+ df.format(new Date())))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -1311,7 +1311,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
 			FileUtils.copyFile(source, new File(fname));
 			CucumberTestAutomationLogger.writeToLog("SeleniumKeywordslib", "captureScreenshot() ","After getting generic screenshot");
 			status = "true";
-			extentTestReport.log(LogStatus.PASS, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+"")));
+			extentTestReport.log(LogStatus.PASS, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+"")));
 			return status;
 
 		} catch (Exception ex) {
@@ -1326,7 +1326,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
 			finally
 			{
 				 extentTestReport.log(LogStatus.FAIL, "Unable to capture screenshot ");
-		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+""))); 
+		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+""))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -1380,7 +1380,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
     		  finally
     		  {
     			 extentTestReport.log(LogStatus.FAIL, "Window not found ");
- 		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+ 		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
  		    	// extentReports.endTest(extentTestReport);
  		    	// extentReports.flush();
  		         //extentReports.close(); 
@@ -1440,7 +1440,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
      		  finally
      		  {
      			 extentTestReport.log(LogStatus.FAIL, "Window not found ");
-  		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+  		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
   		    	// extentReports.endTest(extentTestReport);
   		    	// extentReports.flush();
   		         //extentReports.close(); 
@@ -1546,7 +1546,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
 		finally
 		{
 			     extentTestReport.log(LogStatus.FAIL, "Unable to launch the uRL ");
-		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -1645,7 +1645,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
 			finally
 			{
 				     extentTestReport.log(LogStatus.FAIL, "Unable to click on "+objName+"using javascript executor");
-			         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+objName))); 
+			         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+objName))); 
 			    	// extentReports.endTest(extentTestReport);
 			    	// extentReports.flush();
 			         //extentReports.close(); 
@@ -1748,7 +1748,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
 			finally
 			{
 				     extentTestReport.log(LogStatus.FAIL, "Unable to click on "+objName+"using javascript executor");
-			         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+objName))); 
+			         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+objName))); 
 			    	// extentReports.endTest(extentTestReport);
 			    	// extentReports.flush();
 			         //extentReports.close(); 
@@ -1905,7 +1905,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
 		finally
 			{
 				 extentTestReport.log(LogStatus.FAIL, " "+inputTxt +"  from " +objName +" dropdown");
-		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -2005,7 +2005,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
      	finally
      	{
      		     extentTestReport.log(LogStatus.FAIL, "Unable to set " +objName+ "Checkbox");
-		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -2105,7 +2105,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
      	finally
      	{
      		     extentTestReport.log(LogStatus.FAIL, "Unable to set " +objName+ "Checkbox");
-		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -2205,7 +2205,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
      	finally
      	{
      		     extentTestReport.log(LogStatus.FAIL, "Unable to set " +objName+ "Checkbox");
-		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -2306,7 +2306,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
      	finally
      	{
      		     extentTestReport.log(LogStatus.FAIL, "Unable to set " +objName+ "Checkbox");
-		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -2392,7 +2392,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
      	finally
      	{
      		     extentTestReport.log(LogStatus.FAIL, "Unable to set " +objName+ "Checkbox");
-		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -2476,7 +2476,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
      	finally
      	{
      		     extentTestReport.log(LogStatus.FAIL, "Unable to set " +objName+ "Checkbox");
-		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -2561,7 +2561,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
      	finally
      	{
      		     extentTestReport.log(LogStatus.FAIL, "Unable to set " +objName+ "Checkbox");
-		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+		         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -2671,7 +2671,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
 					finally
 					{
 						 extentTestReport.log(LogStatus.FAIL, objName +" radio button is not found");
-				         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+				         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 				    	// extentReports.endTest(extentTestReport);
 				    	// extentReports.flush();
 				         //extentReports.close(); 
@@ -2797,7 +2797,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
 	     	finally
 	     	{
 	     		     extentTestReport.log(LogStatus.FAIL, "Unable to select " +objName+ "check box");
-			         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+			         extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 			    	// extentReports.endTest(extentTestReport);
 			    	// extentReports.flush();
 			         //extentReports.close(); 
@@ -2879,7 +2879,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
         	}
         	finally {
         		 extentTestReport.addScreenCapture(propertyFileReader.getValue("REPORT_PATH")+"objName");
-            	 extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+"objName"))); 
+            	 extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+"objName"))); 
             	// extentReports.endTest(extentTestReport);
             	// extentReports.flush();
             	 //extentReports.close(); 
@@ -2956,7 +2956,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
          	}
          	finally {
          		 extentTestReport.addScreenCapture(propertyFileReader.getValue("REPORT_PATH")+"objName");
-             	 extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+"objName"))); 
+             	 extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+"objName"))); 
              	// extentReports.endTest(extentTestReport);
              	// extentReports.flush();
              	 //extentReports.close(); 
@@ -2993,7 +2993,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
          	}
          	finally {
          		 extentTestReport.addScreenCapture(propertyFileReader.getValue("REPORT_PATH")+"objName");
-             	 extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreenForExcel(webDriver, propertyFileReader.getValue("FILE_DOWNLOAD_LOC")+"objName"))); 
+             	 extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreenForExcel(webDriver, propertyFileReader.getValue("FILE_DOWNLOAD_LOC")+"objName"))); 
              	// extentReports.endTest(extentTestReport);
              	// extentReports.flush();
              	 //extentReports.close(); 
@@ -3097,7 +3097,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
   		 }
   		 finally{
   				extentTestReport.log(LogStatus.FAIL, "object doesnot exists");
-  		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+  		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
   		    	// extentReports.endTest(extentTestReport);
   		    	// extentReports.flush();
   		         //extentReports.close(); 
@@ -3182,7 +3182,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
   		 }
   		 finally{
   				extentTestReport.log(LogStatus.FAIL, "object doesnot exists");
-  		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+  		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
   		    	// extentReports.endTest(extentTestReport);
   		    	// extentReports.flush();
   		         //extentReports.close(); 
@@ -3287,7 +3287,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
   		 }
   		 finally{
   				extentTestReport.log(LogStatus.FAIL, "object doesnot exists");
-  		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+  		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
   		    	// extentReports.endTest(extentTestReport);
   		    	// extentReports.flush();
   		         //extentReports.close(); 
@@ -3362,7 +3362,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
     		 }
     		 finally{
     				extentTestReport.log(LogStatus.FAIL, "Unable to switch to window ");
-    		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+    		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
     		    	// extentReports.endTest(extentTestReport);
     		    	// extentReports.flush();
     		         //extentReports.close(); 
@@ -3447,7 +3447,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
 	  		 }
 	  		 finally{
 	  				extentTestReport.log(LogStatus.FAIL, "Unable to switch to window ");
-	  		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+	  		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 	  		    	// extentReports.endTest(extentTestReport);
 	  		    	// extentReports.flush();
 	  		         //extentReports.close(); 
@@ -3545,7 +3545,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
 		  		 }
 		  		 finally{
 		  				extentTestReport.log(LogStatus.FAIL, "Unable to switch to window ");
-		  		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+		  		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 		  		    	// extentReports.endTest(extentTestReport);
 		  		    	// extentReports.flush();
 		  		         //extentReports.close(); 
@@ -3592,7 +3592,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
 	  		 }
 	  		 finally{
 	  				extentTestReport.log(LogStatus.FAIL, "ALERT not Handled");
-	  		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+	  		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 	  		    	// extentReports.endTest(extentTestReport);
 	  		    	// extentReports.flush();
 	  		         //extentReports.close(); 
@@ -3629,7 +3629,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
 	  		 }
 	  		 finally{
 	  				extentTestReport.log(LogStatus.FAIL, "ALERT not Handled ");
-	  		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+	  		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 	  		    	// extentReports.endTest(extentTestReport);
 	  		    	// extentReports.flush();
 	  		         //extentReports.close(); 
@@ -3690,7 +3690,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
 	  		 }
 	  		 finally{
 	  				extentTestReport.log(LogStatus.FAIL, "Unable to compare data");
-	  		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+	  		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 	  		    	// extentReports.endTest(extentTestReport);
 	  		    	// extentReports.flush();
 	  		         //extentReports.close(); 
@@ -3734,7 +3734,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
 			} 
 			finally {
        		 extentTestReport.addScreenCapture(propertyFileReader.getValue("REPORT_PATH")+"objName");
-        	 extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+"objName"))); 
+        	 extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+"objName"))); 
         	// extentReports.endTest(extentTestReport);
         	// extentReports.flush();
         	 //extentReports.close(); 
@@ -3830,7 +3830,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
 				}
 			 finally {
 	       		 extentTestReport.addScreenCapture(propertyFileReader.getValue("REPORT_PATH")+"objName");
-	        	 extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+"objName"))); 
+	        	 extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+"objName"))); 
 	        	// extentReports.endTest(extentTestReport);
 	        	// extentReports.flush();
 	        	 //extentReports.close(); 
@@ -3944,7 +3944,7 @@ public WebElement waitForExistence(WebDriver webDriver, String objName,String se
 				}
 			 finally {
 	       		 extentTestReport.addScreenCapture(propertyFileReader.getValue("REPORT_PATH")+"objName");
-	        	 extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+"objName"))); 
+	        	 extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+"objName"))); 
 	        	// extentReports.endTest(extentTestReport);
 	        	// extentReports.flush();
 	        	 //extentReports.close(); 
@@ -8849,7 +8849,7 @@ public String moveCursorToLeft(WebDriver webDriver,String objName,String selecto
 			}
 			finally{
 				extentTestReport.log(LogStatus.FAIL, "Unable to enter "+objName +" due to Invalid Xpath");
-		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+objName+": " ))); 
+		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")+objName+": " ))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -8938,7 +8938,7 @@ public boolean rightClickonElement(WebDriver webDriver,String objName,String sel
 		 }
 		 finally{
 				extentTestReport.log(LogStatus.FAIL, "object doesnot exists");
-		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+		        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 		    	// extentReports.endTest(extentTestReport);
 		    	// extentReports.flush();
 		         //extentReports.close(); 
@@ -9031,7 +9031,7 @@ public String DoubleClick(WebDriver webDriver, String objName,String selector,St
 	 }
 	 finally{
 			extentTestReport.log(LogStatus.FAIL, "Unable to switch to window ");
-	        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportManager.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
+	        extentTestReport.log(LogStatus.FAIL, extentTestReport.addScreenCapture(ExtentReportUtil.CaptureScreen(webDriver, propertyFileReader.getValue("SNAPSHOT_FOLDER")))); 
 	    	// extentReports.endTest(extentTestReport);
 	    	// extentReports.flush();
 	         //extentReports.close(); 

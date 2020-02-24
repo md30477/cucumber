@@ -6,6 +6,7 @@ import java.util.Map;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
+import com.qa.Base.BaseUtil;
 import com.qa.Base.TestBase;
 
 import cucumber.api.DataTable;
@@ -14,7 +15,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class DealStepDefinition extends TestBase{
+public class DealStepDefinition extends BaseUtil{
 
 	@Given("^user is on login page$")
 	public void setup_login_page()

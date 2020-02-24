@@ -3,11 +3,10 @@ package StepDefinitions;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-import com.qa.Base.TestBase;
+import com.aventstack.extentreports.GherkinKeyword;
+import com.qa.Base.BaseUtil;
 import com.qa.pages.ContactsPage;
 import com.qa.pages.LoginPage;
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -15,26 +14,30 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 
-public class LoginStepDefinition  extends TestBase{
+public class LoginStepDefinition  extends BaseUtil{
 LoginPage loginpage ;
 ContactsPage contactsPage;
 
 
+@SuppressWarnings("unused")
 private static boolean isReportRunning;
-static ExtentReports extentReports  =ExtentReportManager.Instance();;
-static ExtentTest extentTestReport=  extentReports.startTest("", "");;
+
 
 	@Given("^user is already on login page$")
-	public void user_is_already_on_login_page()
+	public void user_is_already_on_login_page() throws ClassNotFoundException
 	{
+		scenarioDef.createNode(new GherkinKeyword("Given"), "user is already on login page");
+
 		System.out.println("user_is_already_on_login_page");
 		
 	}
 	@When("^launching the url$")
-	public void launching_the_url()
+	public void launching_the_url() throws Throwable
 	{
+		scenarioDef.createNode(new GherkinKeyword("When"), "launching the url");
+
 		System.out.println("launching the url");
-		// driver.get("https://ui.freecrm.com/");
+		 driver.get("https://ui.freecrm.com/");
 	}
 //	@Then("^enters usernameand password$")
 //	public void enters_usernameand_password()
@@ -43,8 +46,9 @@ static ExtentTest extentTestReport=  extentReports.startTest("", "");;
 //		driver.findElement(By.name("password")).sendKeys("pranuthi2020$");
 //	}
 	@Then("^enters \"([^\"]*)\" and \"([^\"]*)\"$")
-	public void enters_usernameand_password(String username,String password)
+	public void enters_usernameand_password(String username,String password) throws Throwable
 	{
+		scenarioDef.createNode(new GherkinKeyword("Then"), "enters_usernameand_password");
 		System.out.println("++++++++++++++++"+username+"and" +password);
 		 loginpage = new LoginPage();
 		
@@ -54,8 +58,10 @@ static ExtentTest extentTestReport=  extentReports.startTest("", "");;
 	}
 	
 	@And("^click on login button$")
-	public void click_on_login_button() throws InterruptedException
+	public void click_on_login_button() throws InterruptedException, Throwable
 	{
+		scenarioDef.createNode(new GherkinKeyword("And"), "click on login button");
+		
 		//driver.findElement(By.xpath("//*[text()='Login']")).click();
 		Thread.sleep(3000);
 	}
@@ -68,8 +74,10 @@ static ExtentTest extentTestReport=  extentReports.startTest("", "");;
 	}
 	
 	@Then("^click on new contact$")
-	public void click_on_new_contact() throws InterruptedException
+	public void click_on_new_contact() throws InterruptedException, Throwable
 	{
+		scenarioDef.createNode(new GherkinKeyword("Then"), "click on new contact");
+		
 		/*driver.findElement(By.xpath("//span[text()='Contacts']")).click();
 		driver.findElement(By.xpath("//*[text()='New']")).click();
 		Thread.sleep(1000);*/
@@ -79,8 +87,10 @@ static ExtentTest extentTestReport=  extentReports.startTest("", "");;
 	
 	@Then("^enters \"([^\"]*)\" and \"([^\"]*)\" and \"([^\"]*)\"$")
 	
-	public void enters_frstname_lastname_position(String firstname,String lastname,String position) throws InterruptedException
+	public void enters_frstname_lastname_position(String firstname,String lastname,String position) throws InterruptedException, Throwable
 	{
+		scenarioDef.createNode(new GherkinKeyword("Then"), "enters_frstname_lastname_position");
+		
 		   contactsPage= new ContactsPage();
 		contactsPage.createNewContacts(firstname, lastname,position);
 		/*driver.findElement(By.name("first_name")).sendKeys(firstname);
@@ -90,11 +100,14 @@ static ExtentTest extentTestReport=  extentReports.startTest("", "");;
 		Thread.sleep(1000);
 	}
 	@Then("^close the browser$")
-	public void close_the_browser()
+	public void close_the_browser() throws Throwable
 	{
 		//extentReports.endTest(extentTestReport);
-		    extentReports.flush(); 
+		//    extentReports.flush(); 
 			//extentReports.close();
+		scenarioDef.createNode(new GherkinKeyword("Then"), "close the browser");
+		
 		    driver.quit();
 	}
+	
 }

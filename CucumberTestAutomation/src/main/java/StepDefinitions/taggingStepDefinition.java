@@ -2,9 +2,11 @@
 
 package StepDefinitions;
 
+import com.qa.Base.BaseUtil;
+
 import cucumber.api.java.en.Given;
 
-public class taggingStepDefinition {
+public class taggingStepDefinition extends BaseUtil{
 	@Given("^user login to application$")
 	public void user_login_to_application() throws Throwable {
 		

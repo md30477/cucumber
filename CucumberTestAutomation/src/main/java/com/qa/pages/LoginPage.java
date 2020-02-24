@@ -8,7 +8,7 @@ import com.qa.utils.SeleniumKeywordslib;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
-import StepDefinitions.ExtentReportManager;
+import StepDefinitions.ExtentReportUtil;
 
 public class LoginPage extends TestBase{
   SeleniumKeywordslib lib = new SeleniumKeywordslib();
@@ -22,7 +22,7 @@ public class LoginPage extends TestBase{
 	
 	@FindBy(xpath="//*[text()='Login']")
 	WebElement submitbtn;
-	static ExtentReports extentReports  =ExtentReportManager.Instance();;
+	static ExtentReports extentReports  =ExtentReportUtil.Instance();;
 	static ExtentTest extentTestReport=  extentReports.startTest("", "");;
 	
 	public LoginPage()
@@ -37,13 +37,13 @@ public class LoginPage extends TestBase{
 	}
 	public HomePage login(String username,String pwd)
 	{
-	/*	email.sendKeys(username);
+		email.sendKeys(username);
 		password.sendKeys(pwd);
-		submitbtn.click();*/
-		lib.enterText(driver, email, username,extentReports,extentTestReport);
-		lib.enterText(driver, password, pwd,extentReports,extentTestReport);
-		
-		lib.click(driver, submitbtn,extentReports,extentTestReport);
+		submitbtn.click();
+//		lib.enterText(driver, email, username,extentReports,extentTestReport);
+//		lib.enterText(driver, password, pwd,extentReports,extentTestReport);
+//		
+//		lib.click(driver, submitbtn,extentReports,extentTestReport);
 		return new HomePage();
 		
 	}
